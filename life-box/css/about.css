@@ -392,10 +392,23 @@ footer .container {
 .hero-content p.animate-in { transition-delay: 0.2s; }
 .hero-content .cta-button.animate-in { transition-delay: 0.3s; }
 
+/* Focus style for accessibility */
+a:focus-visible, button:focus-visible, .cta-button:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Animation delays for all service and team cards */
 .service-card.animate-in:nth-child(1), .team-card.animate-in:nth-child(1) { transition-delay: 0.1s; }
 .service-card.animate-in:nth-child(2), .team-card.animate-in:nth-child(2) { transition-delay: 0.2s; }
 .service-card.animate-in:nth-child(3), .team-card.animate-in:nth-child(3) { transition-delay: 0.3s; }
-.service-card.animate-in:nth-child(4) { transition-delay: 0.4s; }
+.service-card.animate-in:nth-child(4), .team-card.animate-in:nth-child(4) { transition-delay: 0.4s; }
+.service-card.animate-in:nth-child(5), .team-card.animate-in:nth-child(5) { transition-delay: 0.5s; }
+.service-card.animate-in:nth-child(6), .team-card.animate-in:nth-child(6) { transition-delay: 0.6s; }
+.service-card.animate-in:nth-child(7), .team-card.animate-in:nth-child(7) { transition-delay: 0.7s; }
+.service-card.animate-in:nth-child(8), .team-card.animate-in:nth-child(8) { transition-delay: 0.8s; }
+.service-card.animate-in:nth-child(9), .team-card.animate-in:nth-child(9) { transition-delay: 0.9s; }
+.service-card.animate-in:nth-child(10), .team-card.animate-in:nth-child(10) { transition-delay: 1s; }
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -412,46 +425,15 @@ footer .container {
         transition: right 0.4s ease-in-out;
         gap: 40px;
         box-shadow: -10px 0px 30px -15px #020c1b;
+        z-index: 200; /* Ensure nav overlays content */
     }
 
     .nav-menu.active {
         right: 0;
     }
-    
-    .nav-menu a {
-        font-size: 1.5rem;
-    }
 
-    .hamburger {
-        display: block;
-        position: relative;
-        z-index: 110;
-    }
-    
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    #about .about-content {
+    footer .container {
         flex-direction: column;
-    }
-
-    .about-image {
-        order: -1;
-        margin-bottom: 30px;
-    }
-
-    .hero-content h1 {
-        font-size: clamp(2rem, 10vw, 2.5rem);
-    }
-
-    .content-section h2 {
-        font-size: 2rem;
+        gap: 10px;
     }
 }
